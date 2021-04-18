@@ -1,9 +1,15 @@
-// create an array called pokemonList that will contain ppokemon data to display in the application
+// create an array called pokemonList that will contain pokemon data to display in the application
 
 let pokemonList = [
     {
         name: "Bulbasaur",
         height: 7,
+        types = ['grass', 'poison']
+    },
+
+    {
+        name: "Oddish",
+        height: 5,
         types = ['grass', 'poison']
     },
 
