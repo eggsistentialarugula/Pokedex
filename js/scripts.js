@@ -1,39 +1,42 @@
 // create an array called pokemonList that will contain pokemon data to display in the application
 
-let pokemonList = [
+//define pokemonList
+let pokemonList = [];
+
+pokemonList = [
     {
-        name: "Bulbasaur",
+        name: 'Bulbasaur',
         height: 7,
-        types = ['grass', 'poison']
+        types: ['grass', 'poison']
     },
 
     {
-        name: "Oddish",
+        name: 'Oddish',
         height: 5,
-        types = ['grass', 'poison']
+        types: ['grass', 'poison']
     },
 
     {
-        name: "Charmander",
+        name: 'Charmander',
         height: 6,
-        types = ['fire']
+        types: ['fire']
     },
 
     {
-        name: "Squirtle",
+        name: 'Squirtle',
         height: 5,
-        types = ['water']
+        types: ['water']
     },
 
     {
-        name: "JigglyPuff",
+        name: 'JigglyPuff',
         height: 5,
-        types = ['fairy', 'normal']
+        types: ['fairy', 'normal']
     },
 
     {
-        name: "Pikachu",
+        name: 'Pikachu',
         height: 4,
-        types = ['electric']
+        types: ['electric']
     }
 ];
