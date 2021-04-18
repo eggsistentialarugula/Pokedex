@@ -1,4 +1,4 @@
-**Simple Pokédex JS App**
+# **Simple Pokédex JS App**
 
 
 
