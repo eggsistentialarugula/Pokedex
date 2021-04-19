@@ -45,5 +45,20 @@ pokemonList = [
         height: 0.4,
         weight: 6,
         types: ['electric']
+    },
+
+    {
+        name: 'Charizard',
+        height: 1.7,
+        weight: 90.5,
+        types: ['fire', 'flying'] 
     }
 ];
+
+//output list of pokemon names and height 
+for(let i = 0; i < pokemonList.length; i++){
+    document.write('<p id = "pokeText">' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ') <br>' + '</p>');
+}
+
+//loop through the array to see if height is above a certain value
+
