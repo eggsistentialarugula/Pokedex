@@ -59,10 +59,10 @@ pokemonList = [
 //loop through the array to see if height is above a certain value
 
 for(let i = 0; i < pokemonList.length; i++){
-    document.write('<span id = "pokeText">' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')' + '</span>');
+    document.write('<span class = "pokeText">' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')' + '</span>');
     // conditional to check if height is above a certain value
     if(pokemonList[i].height > 1){
-        document.write(' - Wow, that\'s big!');
+        document.write('<span class = "pokeText">' + ' - Wow, that\'s big!' + '</span>');
     }
     document.write('<br>');
 }
