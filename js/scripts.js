@@ -1,4 +1,4 @@
-// assign  an IIFE variable 
+///////// assign  an IIFE variable ////////////
 
 let pokemonRepository = (function (){
     // create an array called pokemonList that will contain pokemon data to display in the application
@@ -50,7 +50,7 @@ let pokemonRepository = (function (){
     };
 })();
 
-// add a object with the valid keys
+////////// add a object with the valid keys /////////////
 pokemonRepository.add({
     name: 'Pikachu',
     height: 0.4,
@@ -59,11 +59,15 @@ pokemonRepository.add({
 });
 
 // test - add object with invalid or missing keys
+
 // pokemonRepository.add({
 //     name: 'blah',
 //     height: 0.6,
 //     weight: 7
 // });
+
+
+//////////// forEach function //////////////// 
 
 // someValues.forEach((element) => {
 //     console.log(element);
@@ -74,7 +78,7 @@ pokemonRepository.add({
 //     console.log(element);
 // });
 
-// print out pokemon onto page
+/////////// print out pokemon onto page ///////////////
 let pokemonList = pokemonRepository.getAll();
 
 pokemonList.forEach((pokemonItem, i) => {
@@ -89,5 +93,5 @@ pokemonList.forEach((pokemonItem, i) => {
 // find pokemon by name, display in console whether or not pokemon was found in pokemon repository. use filter function
 // if the searched pokemon exists, then return array information about it
 console.log(searchPokemon('squirtle'));
-// if it doesn't return an empty array
+// if it doesn't then return an empty array
 console.log(searchPokemon('DNE'));
