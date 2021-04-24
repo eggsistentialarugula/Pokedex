@@ -1,4 +1,7 @@
+*{
+    box-sizing: border-box;
+}
 .pokeText{
     font-size: 1.5rem;
-    line-height: 5rem;
+    line-height: 0.5rem;
 }
