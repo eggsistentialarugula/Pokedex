@@ -1,7 +1,41 @@
+:root{
+    --light-grey: #d3d3d3;    
+}
+
 *{
     box-sizing: border-box;
 }
-.pokeText{
+/* .pokeText{
     font-size: 1.5rem;
     line-height: 0.5rem;
+} */
+body{
+    background-image: url("https://i.pinimg.com/originals/53/f9/6c/53f96cae5e202b2dfa3b2dd8558d11c3.png");
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    letter-spacing: 0.3rem;
+}
+.pokemonList-button{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    width:200px;
+    margin:10px;
+    padding:15px;
+    border-radius: 5px;
+    border-color: rgba(0,0,0,0.2);
+    cursor:pointer;
+    background:rgba(192, 175, 175, 0.2);
+    transition: .2s;
+}
+
+.pokemonList-button:hover{
+    border-color: rgba(0,0,0,0.5);
+    font-size: 25px;
+}
+
+.pokemon-list li{
+    text-align: center;
+    list-style: none;
 }
