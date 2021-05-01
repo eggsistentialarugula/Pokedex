@@ -18,6 +18,26 @@ let pokemonRepository = (function (){
         { name: 'Charizard', height: 1.7, weight: 90.5, types: ['fire', 'flying'] }
     ];
 
+    // add pokemon items onto page
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('pokemonList-button');
+        listItem.appendChild(button);
+        pokemonList.appendChild(listItem);
+        // event listener
+        button.addEventListener('click', function(){
+            showDetails(pokemon);
+        });
+    }
+
+    // show details of the pokemon
+    function showDetails(pokemon){
+        console.log(pokemon);
+    }
+
     // returns pokemon list
     function getAll(){
         return pokemonList;
@@ -36,7 +56,7 @@ let pokemonRepository = (function (){
         }
     }
 
-    // search for a pokemon
+    // search for a pokemon, find a more simple way to do this later.
     searchPokemon = (searchedPokemon) => {
         return Object.keys(pokemonList).filter(key => {
             return (pokemonList[key].name.toLowerCase()).includes(searchedPokemon.toLowerCase());
@@ -46,7 +66,8 @@ let pokemonRepository = (function (){
     return{
         searchPokemon: searchPokemon,
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem
     };
 })();
 
@@ -79,15 +100,9 @@ pokemonRepository.add({
 // });
 
 /////////// print out pokemon onto page ///////////////
-let pokemonList = pokemonRepository.getAll();
 
-pokemonList.forEach((pokemonItem, i) => {
-    document.write('<p class = "pokeText">' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')');
-    // conditional to check if height is above a certain value
-    if(pokemonList[i].height > 1){
-        document.write('<span class = "pokeText">' + ' - Wow, that\'s big!' + '</span>');
-    }
-    document.write('</p>' + '<br>');
+pokemonRepository.getAll().forEach(pokemonItem => {
+    pokemonRepository.addListItem(pokemonItem);
 });
 
 // find pokemon by name, display in console whether or not pokemon was found in pokemon repository. use filter function
