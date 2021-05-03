@@ -35,7 +35,7 @@ let pokemonRepository = (function (){
 
     // show details of the pokemon
     function showDetails(pokemon){
-        console.log(pokemon);
+        console.log(pokemon.name);
     }
 
     // returns pokemon list
@@ -99,7 +99,7 @@ pokemonRepository.add({
 //     console.log(element);
 // });
 
-/////////// print out pokemon onto page ///////////////
+/////////// Print out Pokemon onto page ///////////////
 
 pokemonRepository.getAll().forEach(pokemonItem => {
     pokemonRepository.addListItem(pokemonItem);
