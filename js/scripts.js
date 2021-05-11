@@ -36,50 +36,50 @@ let pokemonRepository = (function (){
     }
 
     // add pokemon items onto the page
-    function addListItem(pokemon){
+    function addListItem(pokemonItem){
       let pokemonList = document.querySelector('.pokemon-list');
       let listItem = document.createElement('li');
       let button = document.createElement('button');
-      button.innerText = pokemon.name;
+      button.innerText = pokemonItem.name;
       button.classList.add('pokemonList-button');
       listItem.appendChild(button);
       pokemonList.appendChild(listItem);
       // event listener
       button.addEventListener('click', function(){
-          showDetails(pokemon);
+          showDetails(pokemonItem);
       });
     }
 
     //load the list of pokemon
     function loadList() {
-      return fetch(apiUrl).then(function (response) {
+      return fetch(apiUrl).then(response => {
         return response.json();
-      }).then(function (json) {
-        json.results.forEach(function (item) {
+      }).then(json => {
+        json.results.forEach(pokemonItem => {
           let pokemon = {
-            name: item.name,
-            detailsUrl: item.url
+            name: pokemonItem.name,
+            detailsUrl: pokemonItem.url
           };
           add(pokemon);
           console.log(pokemon);
         });
-      }).catch(function (e) {
+      }).catch(e => {
         console.error(e);
       })
     }
 
     //loads details of each pokemon
-    function loadDetails(item) {
-      let url = item.detailsUrl;
-      return fetch(url).then(function (response) {
+    function loadDetails(pokemonItem) {
+      let url = pokemonItem.detailsUrl;
+      return fetch(url).then(response => {
         return response.json();
-      }).then(function (details) {
+      }).then(details => {
         // Now we add the details to the item
-        item.imageUrlFront = details.sprites.front_default;
-        item.imageUrlBack = details.sprites.back_default;
-        item.height = details.height;
-        item.types = details.types;
-      }).catch(function (e) {
+        pokemonItem.imageUrlFront = details.sprites.front_default;
+        pokemonItem.imageUrlBack = details.sprites.back_default;
+        pokemonItem.height = details.height;
+        pokemonItem.types = details.types;
+      }).catch(e => {
         console.error(e);
       });
     }
@@ -91,7 +91,13 @@ let pokemonRepository = (function (){
       })
     }
 
-    // show details of the pokemon
+    // Show details of the pokemon
+    // function showDetails(pokemonItem){
+    //   pokemonRepository.loadDetails(pokemonItem).then(function () {
+    //     console.log(pokemonItem);
+    //   });
+    // }
+
     function showDetails(pokemonItem){
       pokemonRepository.loadDetails(pokemonItem).then(function () {
         console.log(pokemonItem);
@@ -135,16 +141,10 @@ let pokemonRepository = (function (){
 
 /////////// Print out Pokemon onto page ///////////////
 
-// pokemonRepository.loadList().then(function() {
-//     pokemonRepository.getAll().forEach(pokemonItem => {
-//         pokemonRepository.addListItem(pokemonItem);
-//     });
-// });
-
 pokemonRepository.loadList().then(function() {
-  pokemonRepository.getAll().forEach(function (pokemon){
-    pokemonRepository.addListItem(pokemon);
-  });
+    pokemonRepository.getAll().forEach(pokemonItem => {
+        pokemonRepository.addListItem(pokemonItem);
+    });
 });
 
 // find pokemon by name, display in console whether or not pokemon was found in pokemon repository. use filter function
