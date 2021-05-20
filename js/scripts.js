@@ -67,13 +67,14 @@ let pokemonRepository = (function (){
         pokemonItem.weight = details.weight;
 
         pokemonItem.types = [];
-        for(let i = 0; i < details.types.length; i++){
-          pokemonItem.types.push(details.types[i].type.name);
-        }
+        details.types.forEach(types => {
+          pokemonItem.types.push(" " + types.type.name);
+        });
+
         pokemonItem.abilities = [];
         details.abilities.forEach(abilities => {
           pokemonItem.abilities.push(" " + abilities.ability.name);
-        })
+        });
 
       }).catch(e => {
         console.error(e);
