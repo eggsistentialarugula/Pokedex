@@ -105,20 +105,18 @@ let pokemonRepository = (function (){
       closeButton.classList.add('modal-close');
       closeButton.innerText = 'Close';
       closeButton.addEventListener('click', closeModal);
-
       //name
       let pokemonName = document.createElement('h1');
       pokemonName.innerText = pokemonItem.name;
       //image
       let pokemonImg = document.createElement('img');
       pokemonImg.src = pokemonItem.imageUrl;
-
       //description
       let pokemonHeight = document.createElement('p');
-      pokemonHeight.innerText = "Height: " + pokemonItem.height;
+      pokemonHeight.innerText = "Height: " + pokemonItem.height + " ft";
 
       let pokemonWeight = document.createElement('p');
-      pokemonWeight.innerText = "Weight: " + pokemonItem.weight;
+      pokemonWeight.innerText = "Weight: " + pokemonItem.weight + " lbs";
 
       let pokemonTypes = document.createElement('p');
       pokemonTypes.innerText = "Types: " + pokemonItem.types;
