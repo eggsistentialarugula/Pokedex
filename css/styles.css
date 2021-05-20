@@ -5,10 +5,7 @@
 *{
     box-sizing: border-box;
 }
-/* .pokeText{
-    font-size: 1.5rem;
-    line-height: 0.5rem;
-} */
+
 body{
     background-image: url("https://i.pinimg.com/originals/53/f9/6c/53f96cae5e202b2dfa3b2dd8558d11c3.png");
     background-position:center center;
