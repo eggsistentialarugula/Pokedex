@@ -7,7 +7,9 @@
 }
 
 body{
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
+    
     background-image: url("https://i.pinimg.com/originals/53/f9/6c/53f96cae5e202b2dfa3b2dd8558d11c3.png");
     background-position:center center;
     background-repeat: no-repeat;
@@ -23,16 +25,15 @@ h1{
     color:#e0ecee;
 }
 p{
-    font-family: 'Oswald', sans-serif;
     letter-spacing: 0.1rem;
     font-size:22px;
     text-align: center;
     color:#e0ecee;
 }
 .pokemonList-button{
+    font-family: 'Stylish', sans-serif;
     text-transform: capitalize;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 25px;
     width:200px;
     margin:10px;
     padding:15px;
