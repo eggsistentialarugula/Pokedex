@@ -71,9 +71,9 @@ let pokemonRepository = (function (){
           pokemonItem.types.push(details.types[i].type.name);
         }
         pokemonItem.abilities = [];
-        for(let i = 0; i < details.abilities.length; i++){
-          pokemonItem.abilities.push(details.abilities[i].ability.name);
-        }
+        details.abilities.forEach(abilities => {
+          pokemonItem.abilities.push(" " + abilities.ability.name);
+        })
 
       }).catch(e => {
         console.error(e);
