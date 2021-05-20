@@ -1,23 +1,10 @@
 ///////// assign  an IIFE variable ////////////
-
 let pokemonRepository = (function (){
+    let modalContainer = document.querySelector('.modal-container');
     // create empty array of pokemon
     let pokemonList = [];
     // api variable
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50';
-
-    // add a pokemon
-    // function add(pokemonItem){
-    //     // check that the item being added is an object
-    //     // every() method will check if all elements in the array pass the test. The test is "key in pokemonItem" which uses the in operator that returns true if the properties in pokemonItem are in specified object "pokemonList[0]" 
-    //     // Object.keys creates an array of the keys in the object pokemonList[0] 
-    //     if( typeof pokemonItem === 'object' && Object.keys(pokemonList[0]).every( key => key in pokemonItem) ){
-    //         // push object into array if conditions are met
-    //         pokemonList.push(pokemonItem);
-    //     }else{
-    //         console.log('Can\'t add Pokemon, information isn\'t valid.');
-    //     }
-    // }
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     //add pokemon to the empty array of pokemon
     function add(pokemonItem){
@@ -75,10 +62,19 @@ let pokemonRepository = (function (){
         return response.json();
       }).then(details => {
         // Now we add the details to the item
-        pokemonItem.imageUrlFront = details.sprites.front_default;
-        pokemonItem.imageUrlBack = details.sprites.back_default;
+        pokemonItem.imageUrl = details.sprites.other.dream_world.front_default;
         pokemonItem.height = details.height;
-        pokemonItem.types = details.types;
+        pokemonItem.weight = details.weight;
+
+        pokemonItem.types = [];
+        for(let i = 0; i < details.types.length; i++){
+          pokemonItem.types.push(details.types[i].type.name);
+        }
+        pokemonItem.abilities = [];
+        for(let i = 0; i < details.abilities.length; i++){
+          pokemonItem.abilities.push(details.abilities[i].ability.name);
+        }
+
       }).catch(e => {
         console.error(e);
       });
@@ -91,18 +87,74 @@ let pokemonRepository = (function (){
       })
     }
 
-    // Show details of the pokemon
-    // function showDetails(pokemonItem){
-    //   pokemonRepository.loadDetails(pokemonItem).then(function () {
-    //     console.log(pokemonItem);
-    //   });
-    // }
-
     function showDetails(pokemonItem){
       pokemonRepository.loadDetails(pokemonItem).then(function () {
         console.log(pokemonItem);
+        showModal(pokemonItem);
       });
     }
+
+    //Display modal
+    function showModal(pokemonItem){
+      //Clear existing modal content
+      modalContainer.innerHTML = '';
+      let modalBody = document.createElement('div');
+      modalBody.classList.add('modal-body');
+
+      let closeButton = document.createElement('button');
+      closeButton.classList.add('modal-close');
+      closeButton.innerText = 'Close';
+      closeButton.addEventListener('click', closeModal);
+
+      //name
+      let pokemonName = document.createElement('h1');
+      pokemonName.innerText = pokemonItem.name;
+      //image
+      let pokemonImg = document.createElement('img');
+      pokemonImg.src = pokemonItem.imageUrl;
+
+      //description
+      let pokemonHeight = document.createElement('p');
+      pokemonHeight.innerText = "Height: " + pokemonItem.height;
+
+      let pokemonWeight = document.createElement('p');
+      pokemonWeight.innerText = "Weight: " + pokemonItem.weight;
+
+      let pokemonTypes = document.createElement('p');
+      pokemonTypes.innerText = "Types: " + pokemonItem.types;
+
+      let abilities = document.createElement('p');
+      abilities.innerText = "Abilities: " + pokemonItem.abilities;
+
+      modalBody.appendChild(pokemonName);
+      modalBody.appendChild(pokemonImg);
+      modalBody.appendChild(pokemonHeight);
+      modalBody.appendChild(pokemonWeight);
+      modalBody.appendChild(pokemonTypes);
+      modalBody.appendChild(abilities);
+      modalBody.appendChild(closeButton);
+
+      modalContainer.appendChild(modalBody);
+
+      modalContainer.classList.add('is-visible');  
+    }
+
+    function closeModal() {
+      modalContainer.classList.remove('is-visible');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
+          closeModal();
+      }
+    });
+
+    modalContainer.addEventListener('click', (e) => {
+      let target = e.target;
+      if(target === modalContainer){
+          closeModal();
+      }
+    });
 
     return{
       add: add,
@@ -115,40 +167,10 @@ let pokemonRepository = (function (){
     };
 })();
 
-////////// add a object with the valid keys /////////////
-// pokemonRepository.add({
-//     name: 'Pikachu',
-//     height: 0.4,
-//     weight: 6,
-//     types: ['electric'],
-// });
-
-// test - add object with invalid or missing keys
-
-// pokemonRepository.add({
-//     name: 'blah',
-//     height: 0.6,
-//     weight: 7
-// });
-
-
-//////////// forEach function //////////////// 
-
-// someValues.forEach((element, index) => {
-//     console.log(`Current index: ${index}`);
-//     console.log(element);
-// });
-
 /////////// Print out Pokemon onto page ///////////////
-
 pokemonRepository.loadList().then(function() {
     pokemonRepository.getAll().forEach(pokemonItem => {
         pokemonRepository.addListItem(pokemonItem);
     });
 });
 
-// find pokemon by name, display in console whether or not pokemon was found in pokemon repository. use filter function
-// if the searched pokemon exists, then return array information about it
-console.log(searchPokemon('squirtle'));
-// if it doesn't then return an empty array
-console.log(searchPokemon('DNE'));
