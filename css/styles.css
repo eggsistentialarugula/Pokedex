@@ -7,6 +7,7 @@
 }
 
 body{
+    text-transform: uppercase;
     background-image: url("https://i.pinimg.com/originals/53/f9/6c/53f96cae5e202b2dfa3b2dd8558d11c3.png");
     background-position:center center;
     background-repeat: no-repeat;
@@ -29,6 +30,7 @@ p{
     color:#e0ecee;
 }
 .pokemonList-button{
+    text-transform: capitalize;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     width:200px;
