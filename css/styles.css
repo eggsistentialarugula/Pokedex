@@ -1,5 +1,6 @@
 :root{
-    --light-grey: #d3d3d3;    
+    --white: #e0ecee;
+    --black: 0, 0, 0;
 }
 
 *{
@@ -7,9 +8,7 @@
 }
 
 body{
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    
+    font-family: 'Vollkorn', serif;    
     background-image: url("https://i.pinimg.com/originals/53/f9/6c/53f96cae5e202b2dfa3b2dd8558d11c3.png");
     background-position:center center;
     background-repeat: no-repeat;
@@ -21,14 +20,42 @@ h1{
     font-family: 'Crete Round', serif;
     font-size:35px; 
     text-align: center;
-    letter-spacing: 0.2rem;
-    color:#e0ecee;
+    letter-spacing: 0.15rem;
+    color:var(--white);
 }
 p{
     letter-spacing: 0.1rem;
-    font-size:22px;
+    font-size:1.5rem;
     text-align: center;
-    color:#e0ecee;
+    color:var(--white);
+    margin:1%;
+}
+/* navbar */
+.navbar{
+    padding:10px 20px;
+    z-index:10;
+    position:fixed;
+    width: 100%;
+    top:0;
+    background: rgba(var(--black),0.5) !important;
+}
+.navbar-brand img{
+    height:90px;
+    width:90px;
+}
+input.form-control{
+    padding: 20px;
+}
+.btn-lg{
+    padding:4px 10px;
+}
+
+/* list of pokemon */
+.pokemon-list{
+    margin-top:150px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .pokemonList-button{
     font-family: 'Stylish', sans-serif;
@@ -38,14 +65,18 @@ p{
     margin:10px;
     padding:15px;
     border-radius: 5px;
-    border-color: rgba(0,0,0,0.2);
-    cursor:pointer;
-    background:rgba(192, 175, 175, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    background:rgba(var(--black), 0.4);
     transition: .2s;
+    cursor:pointer;
 }
 
 .pokemonList-button:hover{
-    border-color: rgba(0,0,0,0.5);
+    background: rgb(20,238,188);
+    background: linear-gradient(0deg, rgba(20,238,188,0.29735644257703087) 0%, rgba(45,231,253,0.30015756302521013) 100%);
+    color: rgba(0, 0, 0, 0.8);
+    border-color: rgba(var(--black),0.5);
     font-size: 26px;
 }
 
@@ -54,48 +85,41 @@ p{
     list-style: none;
 }
 
+.list-group-item{
+    background-color: rgba(var(--black), 0);
+    border:0;
+}
+
 /* Modals */
-.modal-container{
-    position:fixed;
-    padding:20px;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0, 0, 0, 0.1);
-    z-index:999;
-    overflow:auto;
-    display:grid;
+.modal-content{
     text-align: center;
-}
-
-.modal-body{
-    margin:auto;
-    display:inline-block;
     width:100%;
-    background: rgba(14, 19, 20, 0.4);
-    border: 1px solid #d3d3d3;
-    border-style:outset;
-    max-width: 500px;
+    padding:1.2rem;
+    background: rgba(var(--black), 0.3);        
+}
+.modalBody{
+    padding-bottom: 2rem;
 }
 
-.modal-body img{
-    width: 50%;
+.modal-header{
+    text-transform: capitalize;
 }
-
-.modal-close{
-    cursor: pointer;
-    float: right;
-    border: 1px solid #d3d3d3;
-    border-style:outset;
-    color: #000;
-    padding:5px 40px;
-    font-size: 20px;
-    text-decoration: none;
+.pokemon-img{
+    margin:10% 10%;
+    margin-left:auto;
+    margin-right:auto; 
 }
-
-.modal-close:hover{
-    background:#d3d3d3;
+.modal-footer{
+    padding-bottom: 0.5rem;
+}
+.close{
+    line-height:0;
+    color: var(--white);
+    font-size: 3rem;  
+    font-weight:500;
+}
+.close:hover{
+    color:rgba(var(--black), 0.1);
 }
 
 .modal h1{
@@ -106,13 +130,35 @@ p{
     margin-bottom:0;
 }
 
-.modal-container{
-    display:none;
-}
-
-.modal-container.is-visible{
-    display:block;
-}
-
 /* MEDIA QUERIES */
+@media (max-width: 780px){
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* when screen width is less than 550px, center the list of pokemon */
+    .pokemon-list{
+        padding-top:50px;
+    }
+    .pokemon-img{
+        width:150px; 
+        height: 150px;        
+    }
+    h1{
+        font-size:30px;
+    }
+    p{
+        font-size: 1.3rem;
+    }
+}
 
+@media (max-width: 450px){
+    .navbar-brand img{
+        height:45px;
+        width:45px;
+    }
+    .pokemon-list{
+        padding-top:0;
+    }
+}
