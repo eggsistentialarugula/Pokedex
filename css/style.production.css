@@ -11,6 +11,7 @@
 }
 
 body{
+    background: rgb(117,182,220);
     font-family: 'Vollkorn', serif;    
     background-image: url("https://i.pinimg.com/originals/53/f9/6c/53f96cae5e202b2dfa3b2dd8558d11c3.png");
     background-position:center center;
@@ -68,11 +69,14 @@ input.form-control{
     margin:10px;
     padding:15px;
     border-radius: 5px;
-    border-color: rgba(255, 255, 255, 0.2);
+
+    /* border-color: rgba(255, 255, 255, 0.2); */
     color: #e0ecee;
     background:rgba(0, 0, 0, 0.4);
-    -webkit-transition: .2s;
-    -o-transition: .2s;
+    -webkit-box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;    
+    -webkit-transition: .2s;    
+    -o-transition: .2s;    
     transition: .2s;
     cursor:pointer;
 }
@@ -81,9 +85,8 @@ input.form-control{
     background: rgb(20,238,188);
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(20,238,188,0.29735644257703087)), to(rgba(45,231,253,0.30015756302521013)));
     background: -o-linear-gradient(bottom, rgba(20,238,188,0.29735644257703087) 0%, rgba(45,231,253,0.30015756302521013) 100%);
-    background: linear-gradient(0deg, rgba(20,238,188,0.29735644257703087) 0%, rgba(45,231,253,0.30015756302521013) 100%);
+    background: linear-gradient(0deg, rgba(20,238,188,0.29735644257703087) 0%, rgba(45,231,253,0.30015756302521013) 100%);  
     color: rgba(0, 0, 0, 0.8);
-    border-color: rgba(0, 0, 0,0.5);
     font-size: 26px;
 }
 
