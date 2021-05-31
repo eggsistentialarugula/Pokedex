@@ -2,6 +2,17 @@
 
 **Project Description**
 
-A simple JavaScript app built with HTML, CSS, and JavaScript, which uses an external API.  
+A simple JavaScript app built with HTML, CSS, and JavaScript, using an external API.  
 
- 
+ **Goal**
+
+ Allow users to view a list of Pokémon, see more details of the Pokémon, and search for a Pokémon.
+
+ **Key Features**
+* Load data from an external source (API)
+* View a list of items
+* On user actions (e.g., by clicking on a list item), view details for that item
+
+[API used](https://pokeapi.co/api/v2/pokemon/?limit=150)
+
+[Link to Pokédex](https://eggsistentialarugula.github.io/Pokedex/)
