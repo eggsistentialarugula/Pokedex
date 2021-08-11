@@ -1,95 +1,107 @@
 <!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name = "viewport" content="width=device-width, initial-scale=1">
-        <title>Pokedex</title>
-        <!-- icon -->
-        <link rel="icon" href="images/Pokedex_tool_icon-icons.com_67529.png">
-        <!-- font styles -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Vollkorn:ital,wght@0,400;1,500&display=swap&family=Stylish&display=swap" rel="stylesheet">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- Custom Stylesheet -->
-        <link rel="stylesheet" href="src/css/styles.css">
-        <!-- <link rel="stylesheet" href="dist/style.production.min.css"> -->
-    </head>
-    <body>
+<html lang="en">
 
-        <header>
-            <!-- navbar -->
-            <nav class="navbar">
-                <a class="navbar-brand">
-                    <img class = "pokeball" src="images/Pokeball_icon-icons.com_67448.png" alt="Pokeball Icon">
-                    <img src="images/Flareon_icon-icons.com_67421.png" alt="Flareon Icon">
-                    <img src="images/022_Torchic_icon-icons.com_67313.png" alt="Torchic Icon">
-                    <img src="images/Psyduck_icon-icons.com_67371.png" alt="Psyduck Icon">
-                    <img src="images/Wobbuffet_icon-icons.com_67351.png" alt="Wobbuffet Icon">
-                </a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokedex</title>
+    <!-- icon -->
+    <link rel="icon" href="images/Pokedex_tool_icon-icons.com_67529.png">
+    <!-- font styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Vollkorn:ital,wght@0,400;1,500&display=swap&family=Stylish&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    <!-- <link rel="stylesheet" href="dist/style.production.min.css"> -->
+</head>
+
+<body>
+
+    <header>
+        <!-- navbar -->
+        <nav class="navbar">
+            <a class="navbar-brand">
+                <img class="pokeball" src="images/Pokeball_icon-icons.com_67448.png" alt="Pokeball Icon">
+                <img src="images/Flareon_icon-icons.com_67421.png" alt="Flareon Icon">
+                <img src="images/022_Torchic_icon-icons.com_67313.png" alt="Torchic Icon">
+                <img src="images/Psyduck_icon-icons.com_67371.png" alt="Psyduck Icon">
+                <img src="images/Wobbuffet_icon-icons.com_67351.png" alt="Wobbuffet Icon">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dropdown
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>
-                          </div>
-                        </li>
-                      </ul>
-                </div>
-                <form class="form-inline">
-                  <input class="form-control mr-sm-2" id = "search" type="search" placeholder="Search for a Pokémon" aria-label="Search for a Pokemon">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </form>
-            </nav>
-            
-        </header>
-
-        <main class = "container">
-            <div>
-                <div class="row pokemon-list"></div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-                
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title" id="exampleModalCenterTitle">Modal title</h1>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search for a Pokémon"
+                    aria-label="Search for a Pokemon">
+
+            </form>
+        </nav>
+
+    </header>
+
+    <main class="container">
+        <div>
+            <div class="row pokemon-list"></div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="exampleModalCenterTitle">Modal title</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modalBody">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                        </button>
+                    </div>
+                    <div class="modalBody">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
 
 
-        <button type = "button" class = "btn-dark btn-lg" id ="btnTop" title = "Go To Top"> GO TO TOP </button>
-        
-        <!-- Bootstrap and JQuery -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- polyfills -->
-        <script src="dist/promise-polyfill.js"></script>
-        <script src="dist/fetch-polyfill.js"></script>
-        <!-- custom js -->
-        <!-- <script src="dist/scripts.min.js"></script> -->
-        <script src="src/js/scripts.js"></script>
-    </body>
+    <button type="button" class="btn-dark btn-lg" id="btnTop" title="Go To Top"> GO TO TOP </button>
+
+    <!-- Bootstrap and JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- polyfills -->
+    <script src="dist/promise-polyfill.js"></script>
+    <script src="dist/fetch-polyfill.js"></script>
+    <!-- custom js -->
+    <!-- <script src="dist/scripts.min.js"></script> -->
+    <script src="src/js/scripts.js"></script>
+</body>
+
 </html>
