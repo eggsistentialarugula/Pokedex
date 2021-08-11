@@ -47,9 +47,6 @@ p{
 input.form-control{
     padding: 20px;
 }
-.btn-lg{
-    padding:4px 10px;
-}
 
 /* list of pokemon */
 .pokemon-list{
@@ -130,6 +127,15 @@ input.form-control{
 
 .modal p{
     margin-bottom:0;
+}
+
+/* scroll to top button */
+
+#btnTop{
+    display:none;
+    position: fixed;
+    right:10px;
+    bottom:10px;
 }
 
 /* MEDIA QUERIES */

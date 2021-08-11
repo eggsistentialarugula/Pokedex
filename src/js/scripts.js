@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable quotes */
 ///////// assign  an IIFE variable ////////////
 let pokemonRepository = (function (){
   // create empty array of pokemon
@@ -80,7 +82,7 @@ let pokemonRepository = (function (){
     listItem.append(button);
     pokemonList.append(listItem);
     // event listener
-    button.on('click', function(){
+    button.on('click', () => {
         showDetails(pokemonItem);
     });
   }
@@ -171,8 +173,19 @@ pokemonRepository.loadList().then(function() {
   });
 });
 
-// credits: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
-function topFunction(){
-  document.body.scrollTop = 0; //safari
-  document.documentElement.scrollTop = 0; //for chrome, firefox, IE, and opera  
+// scroll to top
+let btnTop = $('#btnTop');
+btnTop.on('click', () => {
+  $("html, body").animate({scrollTop: 0}, "slow");
+});
+
+// if scrolled down 20px from top of the doc, then show button 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    btnTop.css({"display":"block"});
+  } else {
+    btnTop.css({"display":"none"});
+  }
 }
