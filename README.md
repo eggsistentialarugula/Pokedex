@@ -16,3 +16,7 @@ A simple JavaScript app built with HTML, CSS, and JavaScript, using an external 
 [API used](https://pokeapi.co/api/v2/pokemon/?limit=150)
 
 [Link to Pokédex](https://eggsistentialarugula.github.io/Pokedex/)
+
+**Development**
+
+In the near future, I would like to improve the design of the website and add more stats for the pokemon. 
