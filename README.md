@@ -1,5 +1,7 @@
 # **Simple Pokédex JS App**
 
+[Link to Pokédex](https://eggsistentialarugula.github.io/Pokedex/)
+
 ### **Project Description**
 
 A simple JavaScript app built with HTML, CSS, and JavaScript, using an external API.  
@@ -12,8 +14,6 @@ A simple JavaScript app built with HTML, CSS, and JavaScript, using an external 
 * Load data from an external source (API)
 * View a list of items
 * On user actions (e.g., by clicking on a list item), view details for that item
-
-[Link to Pokédex](https://eggsistentialarugula.github.io/Pokedex/)
 
 ### **Development**
 
