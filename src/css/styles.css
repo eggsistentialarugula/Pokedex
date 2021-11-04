@@ -1,6 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Russo+One&display=swap');
 :root{
-    --white: #e0ecee;
-    --black: 0, 0, 0;
+    --white: 247, 250, 255;
+    --black: 43, 43, 43;
+    --blackest: 0,0,0;
+
+    --normal: 140, 140, 101;
+    --fire: 240,128,48;
+    --water: 104,144,240;
+    --grass: 120,200,80;
+    --electric: 199, 166, 36;
+    --ice: 152,216,216;
+    --fighting: 192,48,40;
+    --poison: 160,64,160;
+    --ground: 224,192,104;
+    --flying: 168,144,240;
+    --psychic: 248,88,136;
+    --bug: 168,184,32;
+    --rock: 184,160,56;
+    --ghost: 112,88,152;
+    --dark: 112,88,72;
+    --dragon: 112,56,248;
+    --steel: 184,184,208;
+    --fairy: 240,182,188;
 }
 
 *{
@@ -9,7 +30,6 @@
 
 body{
     background: rgb(117,182,220);
-    font-family: 'Vollkorn', serif;    
     background-image: url("https://i.pinimg.com/originals/53/f9/6c/53f96cae5e202b2dfa3b2dd8558d11c3.png");
     background-position:center center;
     background-repeat: no-repeat;
@@ -18,17 +38,17 @@ body{
     background-color:rgb(115,179,220);
 }
 h1{
-    font-family: 'Crete Round', serif;
     font-size:35px; 
     text-align: center;
     letter-spacing: 0.15rem;
-    color:var(--white);
+    color:rgba(var(--white),0.88);
 }
 p{
-    letter-spacing: 0.1rem;
-    font-size:1.5rem;
-    text-align: center;
-    color:var(--white);
+    font-family: 'Alatsi', sans-serif;
+    letter-spacing: 0.08rem;
+    font-size:1.4rem;
+    text-align: left;
+    color:rgba(var(--white),0.9);
     margin:1%;
 }
 /* navbar */
@@ -56,26 +76,27 @@ input.form-control{
     margin-right: auto;
 }
 .pokemonList-button{
-    font-family: 'Stylish', sans-serif;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 0.05rem;
     text-transform: capitalize;
     font-size: 25px;
     width:200px;
     margin:10px;
     padding:15px;
     border-radius: 5px;
-
     /* border-color: rgba(255, 255, 255, 0.2); */
-    color: var(--white);
-    background:rgba(var(--black), 0.4);
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;    
+    color: rgba(var(--blackest),1);
+    background:#e46c70;
+    box-shadow: 5px 5px 21px 1px #212f41;
     transition: .2s;
     cursor:pointer;
+    border:0;
 }
 
 .pokemonList-button:hover{
-    background: rgb(20,238,188);
-    background: linear-gradient(0deg, rgba(20,238,188,0.29735644257703087) 0%, rgba(45,231,253,0.30015756302521013) 100%);  
-    color: rgba(0, 0, 0, 0.8);
+    background: #2F596D; 
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 5px 15px 21px 1px #2F596D;
     font-size: 26px;
 }
 
@@ -94,7 +115,6 @@ input.form-control{
     text-align: center;
     width:100%;
     padding:1.2rem;
-    background: rgba(var(--black), 0.3);        
 }
 .modalBody{
     padding-bottom: 2rem;
@@ -112,16 +132,22 @@ input.form-control{
     padding-bottom: 0.5rem;
 }
 .close{
-    line-height:0;
-    color: var(--white);
-    font-size: 3rem;  
+    padding-top:0;
+    padding-bottom: 0;
+    line-height:0.5;
+    color: rgba(255, 255, 255, 0.582);
+    font-size: 2.5rem;  
     font-weight:500;
+    text-shadow:none;
+    opacity:1 !important;
 }
 .close:hover{
-    color:rgba(var(--black), 0.1);
+    color:rgba(255, 255, 255, 0.979);
 }
 
 .modal h1{
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 0.2rem;
     margin-top:0;
 }
 
@@ -134,9 +160,108 @@ input.form-control{
 #btnTop{
     display:none;
     position: fixed;
-    right:10px;
-    bottom:10px;
+    right:2rem;
+    bottom:2rem;
+    animation: bounce 1s infinite alternate ease-in-out;
 }
+#btnTop:hover{
+    cursor: pointer;
+}
+
+/* bounce effect go to top button */
+@keyframes bounce { 0%{transform:translateY(0);} 100% {transform: translateY(-20px)}}
+  /* ------------------------ Background Colors ------------------------ */
+
+  .normal-bg {
+    background: rgba(var(--normal),1);
+    background: linear-gradient(0deg, rgba(var(--normal),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .fire-bg {
+    background: rgba(var(--fire),1);
+    background: linear-gradient(0deg, rgba(var(--fire),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .water-bg {
+    background: rgba(var(--water),1);
+    background: linear-gradient(0deg, rgba(var(--water),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .grass-bg {
+    background: rgba(var(--grass),1);
+    background: linear-gradient(0deg, rgba(var(--grass),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .electric-bg {
+    background: rgba(var(--electric),1);
+    background: linear-gradient(0deg, rgba(var(--electric),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .ice-bg {
+    background: rgba(var(--ice),1);
+    background: linear-gradient(0deg, rgba(var(--ice),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .fighting-bg {
+    background: rgba(var(--fighting),1);
+    background: linear-gradient(0deg, rgba(var(--fighting),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .poison-bg {
+    background: rgba(var(--poison),1);
+    background: linear-gradient(0deg, rgba(var(--poison),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .ground-bg {
+    background: rgba(var(--ground),1);
+    background: linear-gradient(0deg, rgba(var(--ground),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .flying-bg {
+    background: rgba(var(--flying),1);
+    background: linear-gradient(0deg, rgba(var(--flying),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .psychic-bg {
+    background: rgba(var(--psychic),1);
+    background: linear-gradient(0deg, rgba(var(--psychic),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .bug-bg {
+    background: rgba(var(--bug),1);
+    background: linear-gradient(0deg, rgba(var(--bug),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .rock-bg {
+    background: rgba(var(--rock),1);
+    background: linear-gradient(0deg, rgba(var(--rock),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .ghost-bg {
+    background: rgba(var(--ghost),1);
+    background: linear-gradient(0deg, rgba(var(--ghost),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .dark-bg {
+    background: rgba(var(--dark),1);
+    background: linear-gradient(0deg, rgba(var(--dark),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .dragon-bg {
+    background: rgba(var(--dragon),1);
+    background: linear-gradient(0deg, rgba(var(--dragon),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .steel-bg {
+    background: rgba(var(--steel),1);
+    background: linear-gradient(0deg, rgba(var(--steel),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+  
+  .fairy-bg {
+    background: rgba(var(--fairy),1);
+    background: linear-gradient(0deg, rgba(var(--fairy),0.9) 0%, rgba(43, 43, 43,0.9) 100%); 
+  }
+
 
 /* MEDIA QUERIES */
 @media (max-width: 780px){
